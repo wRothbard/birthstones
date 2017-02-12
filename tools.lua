@@ -63,7 +63,7 @@ minetest.register_craft({
 })
 minetest.register_tool("birthstones:sword_" .. string.lower(name), {
 	description = display_name .. " Sword",
-	inventory_image = "birthstones_tool_" .. string.lower(name) .. "pick.png",
+	inventory_image = "birthstones_tool_" .. string.lower(name) .. "sword.png",
 	tool_capabilities = {
 		full_punch_interval = 0.7,
 		max_drop_level=1,
