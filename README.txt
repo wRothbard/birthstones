@@ -23,7 +23,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes in expertmm fork:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
-* (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond just in case other mods (like technic) need diamonds for things
+* (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
 * (2017-02-11) Add crafting recipe to convert block back into 9 gems
 * (2017-02-11) Add Swords & Shovels
 * (2017-02-11) Componentize into separate lua files for each category of operations
