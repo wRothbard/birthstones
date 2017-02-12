@@ -20,6 +20,10 @@ Some major changes were done to make the mod easier to maintain:
 * birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
 * No shields & armor (planned as separate mod: birthstones_3d_armor)
 * No arrows (planned as separate mod: birthstones_throwing)
+### Future plans
+* Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
+* Look into overlap in stone list found in Glooptest
+
 
 ## Changes in expertmm fork:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
@@ -111,6 +115,7 @@ Textures from original (2012) version (1.2-git):
 * Textures for axes, picks, mineral overlays, items (x.png where x is name), and blocks: by Doc22 (originally WTFPL as specified at https://forum.minetest.net/viewtopic.php?id=3663 , rereleased as CC BY-SA 3.0)
 
 Textures for new tools (2016):
+see "expertmm_authored_texture_list" in etc folder
 * Textures based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default :
 (source work is included on layers in Gimp XCF project files in etc folder)
 Swords CC BY-SA 3.0: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0)
