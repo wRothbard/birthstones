@@ -23,7 +23,21 @@ Some major changes were done to make the mod easier to maintain:
 ### Future plans
 * Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
 * Look into overlap in stone list found in Glooptest
-
+* Make compatible with glooptest
+	local glooptest = minetest.get_modpath("glooptest")
+	if glooptest then
+		register_alias("birthstones:amethyst","glooptest:amethyst_gem")
+		register_alias("birthstones:emerald","glooptest:emerald_gem")
+		register_alias("birthstones:ruby","glooptest:ruby_gem")
+		register_alias("birthstones:sapphire","glooptest:sapphire_gem")
+		register_alias("birthstones:topaz","glooptest:topaz_gem")
+		(and glooptest:*_block for all of those)
+	else
+		create those ores
+		register those ore nodes
+		register those block nodes
+	end
+	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
 
 ## Changes in expertmm fork:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
