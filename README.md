@@ -1,6 +1,6 @@
 # Minetest Game mod: birthstones
-(Based on birthstones Minetest mod by Doc22)
-(See "Authors..." sections below for credits)
+(Based on birthstones Minetest mod by Doc22; textures based on CC-BY-SA work by various authors--
+see LICENSE for full credits)
 
 ## Primary differences from original
 ### Main reasons for fork:
@@ -22,6 +22,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-12) Add farming hoes
 * (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
 * (2017-02-11) Add crafting recipe to convert block back into 9 gems
 * (2017-02-11) Add Swords & Shovels
@@ -68,7 +69,6 @@ Some major changes were done to make the mod easier to maintain:
 * (2017-02-10) expertmm fork starting today
 
 ## Known Issues
-* Add hoes made from birthstones
 * Improve block textures
 * Make a trm for treasurer (separate mod)
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
@@ -80,6 +80,7 @@ Some major changes were done to make the mod easier to maintain:
 (to use Speedcrunch to get values not listed, enter the number without any equation, then paste the formulas above exactly to use that "answer" as a variable--see spreadsheet's "Hardness - Extrapolated" sheet for spreadsheet version of formulas)
 
 ### Things that will be kept the same:
+* You must manually delete the etc folder (source material) from your mods/birthtones folder to reduce download times of the mod when using a server
 * birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
 * No shields & armor (planned as separate mod: birthstones_3d_armor)
 * No arrows (planned as separate mod: birthstones_throwing)
@@ -128,28 +129,4 @@ http://dev.minetest.net/minetest.register_node
 http://dev.minetest.net/Groups
 * groups.cracky: like other dig types, the value is normally 1 to 3, and 1 requires the best pick to mine.
 * groups.level: prevents being mined by lower level stuff
-
-
-## Authors and License
-
-### Authors of source code
-
-Changed listed above under "Changes in expertmm fork":
-expertmm (github.com/expertmm) MIT License
-
-Original code:
-Doc22 (originally WTFPL)
-
-
-### Authors of media (textures)
-(see LICENSE.txt)
-
-Textures from original (2012) version (1.2-git):
-* Textures for axes, picks, mineral overlays, items (x.png where x is name), and blocks: by Doc22 (originally WTFPL as specified at https://forum.minetest.net/viewtopic.php?id=3663 , rereleased as CC BY-SA 3.0)
-
-Textures for new tools (2016):
-see "expertmm_authored_texture_list" in etc folder
-* Textures based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default: source work is included on layers in Gimp XCF project files in etc folder
-* Swords CC BY-SA 3.0: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0)
-* Shovels CC BY-SA 3.0: based on default_tool_steelshovel.png by celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
 

@@ -7,19 +7,19 @@ minetest.register_craft({
 
 
 local function registerblockrecipe(name, blockname)
-minetest.register_craft({
-	output = blockname,
-	recipe = {{name, name, name},
-		{name, name, name},
-		{name, name, name}
+	minetest.register_craft({
+		output = blockname,
+		recipe = {{name, name, name},
+			{name, name, name},
+			{name, name, name}
+			}
+	})
+	minetest.register_craft({
+		output = name..' 9',
+		recipe = {
+			{blockname},
 		}
-})
-minetest.register_craft({
-	output = name..' 9',
-	recipe = {
-		{blockname},
-	}
-})
+	})
 end
 
 registerblockrecipe('birthstones:alexandrite', 'birthstones:alexandriteblock')
