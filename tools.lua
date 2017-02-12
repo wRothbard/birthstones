@@ -2,9 +2,9 @@
 -- (START OF INIT IS FURTHER DOWN)
 
 local function registerpickrecipe(name, durability, time1, time2, time3, maxlev)
-minetest.register_tool("birthstones:pick_" .. name.lower(), {
+minetest.register_tool("birthstones:pick_" .. string.lower(name), {
 	description = name .. " Pickaxe",
-	inventory_image = "birthstones_tool_" .. name.lower() .. "pick.png",
+	inventory_image = "birthstones_tool_" .. string.lower(name) .. "pick.png",
 	tool_capabilities = {
 		max_drop_level=0,
 		groupcaps={
@@ -13,16 +13,16 @@ minetest.register_tool("birthstones:pick_" .. name.lower(), {
 	},
 })
 minetest.register_craft({
-	output = "birthstones:pick_" .. name.lower(),
+	output = "birthstones:pick_" .. string.lower(name),
 	recipe = {
-		{'birthstones:' .. name.lower(), 'birthstones:' .. name.lower(), 'birthstones:' .. name.lower()},
+		{'birthstones:' .. string.lower(name), 'birthstones:' .. string.lower(name), 'birthstones:' .. string.lower(name)},
 		{'', 'default:stick', ''},
 		{'', 'default:stick', ''}
 	}
 })
-minetest.register_tool("birthstones:axe_" .. name.lower(), {
+minetest.register_tool("birthstones:axe_" .. string.lower(name), {
 	description = name .. " Axe",
-	inventory_image = "birthstones_tool_" .. name.lower() .. "axe.png",
+	inventory_image = "birthstones_tool_" .. string.lower(name) .. "axe.png",
 	tool_capabilities = {
 		max_drop_level=1,
 		groupcaps={
@@ -32,17 +32,17 @@ minetest.register_tool("birthstones:axe_" .. name.lower(), {
 	},
 })
 minetest.register_craft({
-	output = "birthstones:axe_" .. name.lower(),
+	output = "birthstones:axe_" .. string.lower(name),
 	recipe = {
-		{'birthstones:' .. name.lower(), 'birthstones:' .. name.lower()},
-		{'birthstones:' .. name.lower(), 'default:stick'},
+		{'birthstones:' .. string.lower(name), 'birthstones:' .. string.lower(name)},
+		{'birthstones:' .. string.lower(name), 'default:stick'},
 		{'', 'default:stick'}
 	}
 })
-minetest.register_tool("birthstones:shovel_" .. name.lower(), {
+minetest.register_tool("birthstones:shovel_" .. string.lower(name), {
 	description = name .. " Shovel",
-	inventory_image = "birthstones_tool_" .. name.lower() .. "shovel.png",
-	wield_image = "birthstones_tool_" .. name.lower() .. "shovel.png^[transformR90",
+	inventory_image = "birthstones_tool_" .. string.lower(name) .. "shovel.png",
+	wield_image = "birthstones_tool_" .. string.lower(name) .. "shovel.png^[transformR90",
 	tool_capabilities = {
 		full_punch_interval = 1.0,
 		max_drop_level=1,
@@ -54,9 +54,9 @@ minetest.register_tool("birthstones:shovel_" .. name.lower(), {
 	sound = {breaks = "default_tool_breaks"},
 })
 minetest.register_craft({
-	output = "birthstones:shovel_" .. name.lower(),
+	output = "birthstones:shovel_" .. string.lower(name),
 	recipe = {
-		{'', 'birthstones:' .. name.lower()},
+		{'', 'birthstones:' .. string.lower(name)},
 		{'', 'default:stick'},
 		{'', 'default:stick'}
 	}
@@ -64,9 +64,9 @@ minetest.register_craft({
 end
 
 local function registerswordrecipe(name)
-minetest.register_tool("birthstones:sword_" .. name.lower(), {
+minetest.register_tool("birthstones:sword_" .. string.lower(name), {
 	description = name .. " Pickaxe",
-	inventory_image = "birthstones_tool_" .. name.lower() .. "pick.png",
+	inventory_image = "birthstones_tool_" .. string.lower(name) .. "pick.png",
 	tool_capabilities = {
 		full_punch_interval = 0.9,
 		max_drop_level=3,
@@ -79,10 +79,10 @@ minetest.register_tool("birthstones:sword_" .. name.lower(), {
 
 })
 minetest.register_craft({
-	output = "birthstones:sword_" .. name.lower(),
+	output = "birthstones:sword_" .. string.lower(name),
 	recipe = {
-		{'', 'birthstones:' .. name.lower()},
-		{'', 'birthstones:' .. name.lower()},
+		{'', 'birthstones:' .. string.lower(name)},
+		{'', 'birthstones:' .. string.lower(name)},
 		{'', 'default:stick'}
 	}
 })
