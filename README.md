@@ -19,31 +19,6 @@ Some major changes were done to make the mod easier to maintain:
 * changed to minetest_game's naming scheme for filenames and node/tool names (aliases added for backward compatibility)
 * componentized into separate lua files for each category of operations
 
-### Things that will be kept the same:
-* birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
-* No shields & armor (planned as separate mod: birthstones_3d_armor)
-* No arrows (planned as separate mod: birthstones_throwing)
-
-### Future plans
-* Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
-* Look into overlap in stone list found in Glooptest
-* Make compatible with glooptest
-```lua
-	local glooptest = minetest.get_modpath("glooptest")
-	if glooptest then
-		register_alias("birthstones:amethyst","glooptest:amethyst_gem")
-		register_alias("birthstones:emerald","glooptest:emerald_gem")
-		register_alias("birthstones:ruby","glooptest:ruby_gem")
-		register_alias("birthstones:sapphire","glooptest:sapphire_gem")
-		register_alias("birthstones:topaz","glooptest:topaz_gem")
-		-- (and glooptest:*_block for all of those)
-	else
-		-- create those ores
-		-- register those ore nodes
-		-- register those block nodes
-	end
-	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
-```
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
@@ -53,20 +28,14 @@ Some major changes were done to make the mod easier to maintain:
 * (2017-02-11) Componentize into separate lua files for each category of operations
 * !(2017-02-11) Make opal possible to get: added missing register_on_generated for changing some stone to opal (see oregen.lua)
 * !(2017-02-11) Change drop for stone_with_topaz from stone_with_topaz to topaz (apparently this didn't cause an issue since craft method had been used)
-* !(2017-02-11) Change drop of ores (to match modern style from default in minetest_game from minetest 0.4.15-git 2017-01), where * below is name, from:
+* !(2017-02-11) Change drop of ores (to match modern style from default in minetest_game from minetest 0.4.15-git 2017-01), where * below is name:
 ```lua
-	drop = 'craft "birthstones:*" 1',
-```
-	to
-```lua
+	-- drop = 'craft "birthstones:*" 1',
 	drop = "birthstones:*",
 ```
-* !(2017-02-11) Block needs better pick to be mined: Changed groups from:
+* !(2017-02-11) Block needs better pick to be mined: Changed groups:
 ```lua
-	groups = {cracky = 3}
-```
-	to
-```lua
+	-- groups = {cracky = 3}
 	groups = {cracky = 1, level = 3}
 ```
 * !(2017-02-11) Ore needs better pick to be mined: changed groups.cracky of all from 3 to 1
@@ -109,6 +78,32 @@ Some major changes were done to make the mod easier to maintain:
     * Other extrapolated Brinell values (rounded to nearest whole number) explanation: Excel says power function for predicting from density is Brinell = 9.0954*(ans^2.9757) where ans is metric density value
     * Extrapolated Moh values explanation: Excel says power curve from 18carat.co.uk materials is: Moh = 0.6514*(ans^0.4269) where ans is Brinell value
 (to use Speedcrunch to get values not listed, enter the number without any equation, then paste the formulas above exactly to use that "answer" as a variable--see spreadsheet's "Hardness - Extrapolated" sheet for spreadsheet version of formulas)
+
+### Things that will be kept the same:
+* birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
+* No shields & armor (planned as separate mod: birthstones_3d_armor)
+* No arrows (planned as separate mod: birthstones_throwing)
+
+### Future plans
+* Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
+* Look into overlap in stone list found in Glooptest
+* Make compatible with glooptest
+```lua
+	local glooptest = minetest.get_modpath("glooptest")
+	if glooptest then
+		register_alias("birthstones:amethyst","glooptest:amethyst_gem")
+		register_alias("birthstones:emerald","glooptest:emerald_gem")
+		register_alias("birthstones:ruby","glooptest:ruby_gem")
+		register_alias("birthstones:sapphire","glooptest:sapphire_gem")
+		register_alias("birthstones:topaz","glooptest:topaz_gem")
+		-- (and glooptest:*_block for all of those)
+	else
+		-- create those ores
+		-- register those ore nodes
+		-- register those block nodes
+	end
+	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
+```
 
 
 ## Minerals of note not in birthstones (for reference only) with density values from website above:
