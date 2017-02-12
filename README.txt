@@ -83,6 +83,7 @@ Some major changes were done to make the mod easier to maintain:
 ## Known Issues
 * Add hoes made from birthstones
 * Improve block textures
+* Make a trm for treasurer (separate mod)
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
 	#of uses, dig times, and fleshy damage group value now all based on real-life hardness values
 	(see xlsx spreadsheet for details and sources and extrapolation formulas)
