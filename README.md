@@ -39,6 +39,7 @@ Some major changes were done to make the mod easier to maintain:
 	end
 	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
 
+
 ## Changes in expertmm fork:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
 * (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
@@ -80,6 +81,7 @@ Some major changes were done to make the mod easier to maintain:
 		"birthstones:".. name .. "_pick" TO "birthstones:pick_"..name
 		"birthstones:".. name .. "_axe" TO "birthstones:axe_"..name
 
+
 ## Known Issues
 * Add hoes made from birthstones
 * Improve block textures
@@ -98,7 +100,8 @@ MORE but with hardness values available from 18carat.co.uk link above:
 * Name,Density,Moh,Brinell
 * Apatite,3.16-3.23,5,137
 * Calcite,2.69-2.71,3,53
-	  
+
+
 ## Minetest 2017 API notes
 (see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
 ### groupcaps (in tool_capabilities dict in register_tool 2nd param dict): a dictionary of groupcap dictionaries such as:
@@ -114,9 +117,10 @@ http://dev.minetest.net/minetest.register_node
 http://dev.minetest.net/Groups
 * groups.cracky: like other dig types, the value is normally 1 to 3, and 1 requires the best pick to mine.
 * groups.level: prevents being mined by lower level stuff
-		
+
 
 ## Authors and License
+
 ### Authors of source code
 
 Changed listed above under "Changes in expertmm fork":
@@ -134,9 +138,7 @@ Textures from original (2012) version (1.2-git):
 
 Textures for new tools (2016):
 see "expertmm_authored_texture_list" in etc folder
-* Textures based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default :
-
-(source work is included on layers in Gimp XCF project files in etc folder)
-Swords CC BY-SA 3.0: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0)
-Shovels CC BY-SA 3.0: based on default_tool_steelshovel.png by celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
+* Textures based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default: source work is included on layers in Gimp XCF project files in etc folder
+* Swords CC BY-SA 3.0: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0)
+* Shovels CC BY-SA 3.0: based on default_tool_steelshovel.png by celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
 
