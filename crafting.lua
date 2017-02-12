@@ -1,3 +1,11 @@
+minetest.register_craft({
+	output = "default:diamond",
+	recipe = {
+		{"dye:blue","birthstones:diamond"}
+	}
+})
+
+
 local function registerblockrecipe(name, blockname)
 minetest.register_craft({
 	output = blockname,

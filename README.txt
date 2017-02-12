@@ -17,10 +17,13 @@ Some major changes were done to make the mod easier to maintain:
 * changed to minetest_game's naming scheme for filenames and node/tool names (aliases added for backward compatibility)
 * componentized into separate lua files for each category of operations
 ### Things that will be kept the same:
-* birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". 
+* birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
+* No shields & armor (planned as separate mod: birthstones_3d_armor)
+* No arrows (planned as separate mod: birthstones_throwing)
 
 ## Changes in expertmm fork:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond just in case other mods (like technic) need diamonds for things
 * (2017-02-11) Add crafting recipe to convert block back into 9 gems
 * (2017-02-11) Add Swords & Shovels
 * (2017-02-11) Componentize into separate lua files for each category of operations
@@ -60,7 +63,8 @@ Some major changes were done to make the mod easier to maintain:
 		"birthstones:".. name .. "_axe" TO "birthstones:axe_"..name
 
 ## Known Issues
-* No shields & armor from 3d_armor (will be provided as separate mod)
+* Add hoes made from birthstones
+* Improve block textures
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
 	#of uses, dig times, and fleshy damage group value now all based on real-life hardness values
 	(see xlsx spreadsheet for details and sources and extrapolation formulas)
@@ -74,7 +78,7 @@ Some major changes were done to make the mod easier to maintain:
 	  Name,Density,Moh,Brinell
 	  Apatite,3.16-3.23,5,137
 	  Calcite,2.69-2.71,3,53
-		  
+	  
 ## Minetest 2017 API notes (see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
 ### groupcaps (in tool_capabilities dict in register_tool 2nd param dict): a dictionary of groupcap dictionaries such as:
 	* choppy: chops wood
