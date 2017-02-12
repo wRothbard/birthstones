@@ -85,32 +85,35 @@ Some major changes were done to make the mod easier to maintain:
 * Improve block textures
 * Make a trm for treasurer (separate mod)
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
-	#of uses, dig times, and fleshy damage group value now all based on real-life hardness values
-	(see xlsx spreadsheet for details and sources and extrapolation formulas)
-	Formulas were determined using Excel:
-		* Diamond theoretical Brinell explanation: Excel says the curve on 18carat.co.uk, if a power curve, is Brinell = 2.9592*(ans^2.2856) where ans is Moh value
-		* Other extrapolated Brinell values (rounded to nearest whole number) explanation: Excel says power function for predicting from density is Brinell = 9.0954*(ans^2.9757) where ans is metric density value
-		* Extrapolated Moh values explanation: Excel says power curve from 18carat.co.uk materials is: Moh = 0.6514*(ans^0.4269) where ans is Brinell value
-		(to use Speedcrunch to get values not listed, enter the number without any equation, then paste the formulas above exactly to use that "answer" as a variable--see spreadsheet's "Hardness - Extrapolated" sheet for spreadsheet version of formulas)
-	Minerals of note not in birthstones (for reference only) with density values from website above:
-	  MORE but with hardness values available from 18carat.co.uk link above:
-	  Name,Density,Moh,Brinell
-	  Apatite,3.16-3.23,5,137
-	  Calcite,2.69-2.71,3,53
+  * #of uses, dig times, and fleshy damage group value now all based on real-life hardness values (see xlsx spreadsheet for details and sources and extrapolation formulas)
+  * Formulas were determined using Excel:
+    * Diamond theoretical Brinell explanation: Excel says the curve on 18carat.co.uk, if a power curve, is Brinell = 2.9592*(ans^2.2856) where ans is Moh value
+    * Other extrapolated Brinell values (rounded to nearest whole number) explanation: Excel says power function for predicting from density is Brinell = 9.0954*(ans^2.9757) where ans is metric density value
+    * Extrapolated Moh values explanation: Excel says power curve from 18carat.co.uk materials is: Moh = 0.6514*(ans^0.4269) where ans is Brinell value
+(to use Speedcrunch to get values not listed, enter the number without any equation, then paste the formulas above exactly to use that "answer" as a variable--see spreadsheet's "Hardness - Extrapolated" sheet for spreadsheet version of formulas)
+
+
+## Minerals of note not in birthstones (for reference only) with density values from website above:
+MORE but with hardness values available from 18carat.co.uk link above:
+* Name,Density,Moh,Brinell
+* Apatite,3.16-3.23,5,137
+* Calcite,2.69-2.71,3,53
 	  
-## Minetest 2017 API notes (see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
+## Minetest 2017 API notes
+(see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
 ### groupcaps (in tool_capabilities dict in register_tool 2nd param dict): a dictionary of groupcap dictionaries such as:
-	* choppy: chops wood
-	* snappy: leaves and other thin materials -- possible with sword, but wears sword out quickly
-	* fleshy: damage mobs/players
-	* crumbly: shovels etc
-	* cracky: picks etc
-	(and more unrelated to this mod)
+* choppy: chops wood
+* snappy: leaves and other thin materials -- possible with sword, but wears sword out quickly
+* fleshy: damage mobs/players
+* crumbly: shovels etc
+* cracky: picks etc
+(and more unrelated to this mod)
+
 ### register_node:
-	http://dev.minetest.net/minetest.register_node
-	http://dev.minetest.net/Groups
-	* groups.cracky: like other dig types, the value is normally 1 to 3, and 1 requires the best pick to mine.
-	* groups.level: prevents being mined by lower level stuff
+http://dev.minetest.net/minetest.register_node
+http://dev.minetest.net/Groups
+* groups.cracky: like other dig types, the value is normally 1 to 3, and 1 requires the best pick to mine.
+* groups.level: prevents being mined by lower level stuff
 		
 
 ## Authors and License
@@ -132,6 +135,7 @@ Textures from original (2012) version (1.2-git):
 Textures for new tools (2016):
 see "expertmm_authored_texture_list" in etc folder
 * Textures based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default :
+
 (source work is included on layers in Gimp XCF project files in etc folder)
 Swords CC BY-SA 3.0: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0)
 Shovels CC BY-SA 3.0: based on default_tool_steelshovel.png by celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0)
