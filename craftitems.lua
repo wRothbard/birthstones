@@ -55,7 +55,7 @@ minetest.register_craftitem( "birthstones:topaz", {
 })
 minetest.register_craftitem( "birthstones:zircon", {
 	description = "Zircon",
-	inventory_image = "Zircon.png",
+	inventory_image = "birthstones_zircon.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 
