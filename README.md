@@ -6,20 +6,24 @@
 ### Main reasons for fork:
 * add more tools
 * make changes to code to make use of modern Minetest (such as ore drop string)
+
 ### Notable issues found in original (see items marked with '!' in "Changes" section for others):
 (hopefully these changes get corrected there)
 * birthstones were wrong month (see "birthstones list.csv" in etc folder for corrections, though month names are removed in fork)
 * now stone_with_opal is generated now (was impossible to get by mining before, apparently)
 * crafting block back to 9 gemstones is now possible
 * found some code bugs (see exclamation points under "Changes" below)
+
 ### Other major differences from original
 Some major changes were done to make the mod easier to maintain:
 * changed to minetest_game's naming scheme for filenames and node/tool names (aliases added for backward compatibility)
 * componentized into separate lua files for each category of operations
+
 ### Things that will be kept the same:
 * birthstones:diamond will still be present for now (as opposed to becoming an alias for default:diamond), since the birthstones diamond texture looks cool. The display names for all of the items will say "White Diamond". (planned: recipe to make it into regular diamond)
 * No shields & armor (planned as separate mod: birthstones_3d_armor)
 * No arrows (planned as separate mod: birthstones_throwing)
+
 ### Future plans
 * Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
 * Look into overlap in stone list found in Glooptest
@@ -40,7 +44,7 @@ Some major changes were done to make the mod easier to maintain:
 	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
 
 
-## Changes in expertmm fork:
+## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
 * (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
 * (2017-02-11) Add crafting recipe to convert block back into 9 gems
@@ -80,7 +84,7 @@ Some major changes were done to make the mod easier to maintain:
 		birthstones:*ore TO birthstones:stone_with_*
 		"birthstones:".. name .. "_pick" TO "birthstones:pick_"..name
 		"birthstones:".. name .. "_axe" TO "birthstones:axe_"..name
-
+* (2017-02-10) expertmm fork starting today
 
 ## Known Issues
 * Add hoes made from birthstones
