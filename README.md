@@ -28,6 +28,7 @@ Some major changes were done to make the mod easier to maintain:
 * Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
 * Look into overlap in stone list found in Glooptest
 * Make compatible with glooptest
+```lua
 	local glooptest = minetest.get_modpath("glooptest")
 	if glooptest then
 		register_alias("birthstones:amethyst","glooptest:amethyst_gem")
@@ -35,14 +36,14 @@ Some major changes were done to make the mod easier to maintain:
 		register_alias("birthstones:ruby","glooptest:ruby_gem")
 		register_alias("birthstones:sapphire","glooptest:sapphire_gem")
 		register_alias("birthstones:topaz","glooptest:topaz_gem")
-		(and glooptest:*_block for all of those)
+		-- (and glooptest:*_block for all of those)
 	else
-		create those ores
-		register those ore nodes
-		register those block nodes
+		-- create those ores
+		-- register those ore nodes
+		-- register those block nodes
 	end
 	-- If neeeded, can also do things like drop = glooptest and "glooptest:topaz_gem" or "birthstones:topaz"
-
+```
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
@@ -53,13 +54,21 @@ Some major changes were done to make the mod easier to maintain:
 * !(2017-02-11) Make opal possible to get: added missing register_on_generated for changing some stone to opal (see oregen.lua)
 * !(2017-02-11) Change drop for stone_with_topaz from stone_with_topaz to topaz (apparently this didn't cause an issue since craft method had been used)
 * !(2017-02-11) Change drop of ores (to match modern style from default in minetest_game from minetest 0.4.15-git 2017-01), where * below is name, from:
+```lua
 	drop = 'craft "birthstones:*" 1',
+```
 	to
+```lua
 	drop = "birthstones:*",
+```
 * !(2017-02-11) Block needs better pick to be mined: Changed groups from:
+```lua
 	groups = {cracky = 3}
+```
 	to
+```lua
 	groups = {cracky = 1, level = 3}
+```
 * !(2017-02-11) Ore needs better pick to be mined: changed groups.cracky of all from 3 to 1
 * (2017-02-11) Changed "* Ore" to "Stone with *" (because why copy other people when you can make sense instead)
 * !(2017-02-11) Preliminary step in fixing one-chop axes: changed register_tool time2 and time3 from:
@@ -71,7 +80,9 @@ Some major changes were done to make the mod easier to maintain:
 	see etc/birthstones list.csv
 * !(2017-02-10) Fixed issue where topaz ore was registered twice (didn't seem to cause problems)
 * !(2017-02-10) Capitalized stone name when used within tool display name
-* (2017-02-10) Naming changed to match minetest texture&variable naming scheme (see changes below, where ^* is capitalized mineral name and * is uncapitalized)
+* (2017-02-10) Naming changed to match minetest texture&variable naming scheme
+```
+    (see changes below, where ^* is capitalized mineral name and * is uncapitalized)
 	(aliases added only for backward compatibility--see aliases.lua--doing aliases can be commented in init.lua)
 	Files:
 		^* TO birthstones_* (ITEM)
@@ -84,6 +95,7 @@ Some major changes were done to make the mod easier to maintain:
 		birthstones:*ore TO birthstones:stone_with_*
 		"birthstones:".. name .. "_pick" TO "birthstones:pick_"..name
 		"birthstones:".. name .. "_axe" TO "birthstones:axe_"..name
+```
 * (2017-02-10) expertmm fork starting today
 
 ## Known Issues
