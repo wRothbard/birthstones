@@ -22,6 +22,8 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-13) Made multi-sided Topaz Block (WIP)
+* (2017-02-13) Made Blender project for gem rendering (see Developer Notes below for usage)
 * (2017-02-12) Add farming hoes
 * (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
 * (2017-02-11) Add crafting recipe to convert block back into 9 gems
@@ -112,6 +114,21 @@ MORE but with hardness values available from 18carat.co.uk link above:
 * Name,Density,Moh,Brinell
 * Apatite,3.16-3.23,5,137
 * Calcite,2.69-2.71,3,53
+
+### Developer Notes
+xcf file has colors used for manual tinting
+Blender Cycles project has nodes with custom labels with the following values:
+* If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis (see "Blender gem tutorial" link below for why)
+Name,GemColor,IOR**,Scatter,Gloss,Clarity,Absorption
+Topaz, E5A55F, 1.62, .5, .5, 1.0, 0.0
+
+### Special Thanks
+Blender gem tutorial
+https://www.youtube.com/watch?v=3EN6mAFDqaI
+by Marijus Jacevičius
+
+Complete IOR List
+** http://forums.cgsociety.org/archive/index.php?t-513458.html
 
 
 ## Minetest 2017 API notes

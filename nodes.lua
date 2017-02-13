@@ -172,9 +172,10 @@ minetest.register_node( "birthstones:sapphireblock", {
 	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_stone_defaults(),
 })
+-- tile_images: +Y, -Y, +X, -X, +Z, -Z. In English: top, bottom, right, left, back, front.  - http://dev.minetest.net/minetest.register_node
 minetest.register_node( "birthstones:topazblock", {
 	description = "Topaz Block",
-	tile_images = { "birthstones_topaz_block.png" },
+	tile_images = { "birthstones_topaz_block_top.png", "birthstones_topaz_block_top.png", "birthstones_topaz_block_east.png", "birthstones_topaz_block_east.png", "birthstones_topaz_block_north.png", "birthstones_topaz_block_north.png" },
 	is_ground_content = true,
 	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_stone_defaults(),
