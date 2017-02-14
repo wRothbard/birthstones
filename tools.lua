@@ -83,7 +83,7 @@ local function create_tools_for_material(material, display_name, uses_vs_env, ti
 		}
 	})
 	if minetest.get_modpath("farming") then
-		farming.register_hoe(":farming:hoe_" .. material, {
+		farming.register_hoe("birthstones:hoe_" .. material, { -- formerly ":farming:hoe_" .. material
 			description = display_name .. " Hoe",
 			inventory_image = "birthstones_tool_" .. material .. "hoe.png",
 			max_uses = uses_vs_env*3,
