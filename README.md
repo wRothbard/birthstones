@@ -22,6 +22,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-15) blend file: connected ID Mask to Image output (in Compositor nodes) for alpha in rendered image
 * (2017-02-13) Finished working gem and block textures for Topaz, Alexandrite, Amethyst, made in Blender by expertmm
 * (2017-02-13) Made multi-sided Topaz Block (WIP) made in Blender
 * (2017-02-13) Made Blender project for gem rendering (see Developer Notes below for usage)
