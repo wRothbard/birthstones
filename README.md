@@ -22,7 +22,8 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
-* (2017-02-13) Made multi-sided Topaz Block (WIP)
+* (2017-02-13) Finished working gem and block textures for Topaz, Alexandrite, Amethyst, made in Blender by expertmm
+* (2017-02-13) Made multi-sided Topaz Block (WIP) made in Blender
 * (2017-02-13) Made Blender project for gem rendering (see Developer Notes below for usage)
 * (2017-02-12) Add farming hoes
 * (2017-02-11) Add recipe to create default:diamond from dye:blue + birthstones:diamond for playability (for when other mods like technic need diamonds for things)
@@ -117,15 +118,40 @@ MORE but with hardness values available from 18carat.co.uk link above:
 
 ### Developer Notes
 xcf file has colors used for manual tinting
-Blender Cycles project has nodes with custom labels with the following values:
-* If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis (see "Blender gem tutorial" link below for why)
-Name,GemColor,IOR**,Scatter,Gloss,Clarity,Absorption
-Topaz, E5A55F, 1.62, .5, .5, 1.0, 0.0
+
+(If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis--see "Blender gem tutorial" link below for why)
+Do the following steps to re-render a block:
+* Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment):
+(you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
+Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsorptionSaturation
+Alexandrite,567274 to 63152c,1.75,	.5,		0,		0,		0,			1.0
+Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5
+Aquamarine,	8bdcdf,			,	,		,		,		,			
+Diamond,	ced7da,			,	,		,		,		,			
+Emerald,	02552a,			,	,		,		,		,			
+Garnet,		78200c,			,	,		,		,		,			
+Opal,		(texture),		,	,		,		,		,			
+Peridot,	85b116,			,	,		,		,		,			
+Ruby,		832935,			,	,		,		,		,			
+Sapphire,	163f7d,			,	,		,		,		,			
+Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
+Zircon,		255f75,			,	,		,		,		,			
+Take note that this list is in alphabetical order (like birthstones-mod git 2012) for convenience, not in actual birthstone month order.
+* Keep default resolution of 32x32 (must be full bleed then cropped to 16x16 manually to avoid edge issues with cycles)
+* Render the following cameras (or experiment): North, East, Top
+* In your favorite image editor, finish making them usable in-game:
+	* Crop all textures to 16x16
+	* Make the textures seemless such as by using these steps:
+		* Copy the bottom row of pixels of top, then Paste onto top row of pixels of north
+		* Rotate top to the right temporarilty (don't save top after this)
+		* Copy the new bottom row of pixels of top, then Paste onto top row of pixels of east
+
 
 ### Special Thanks
 Blender gem tutorial
 https://www.youtube.com/watch?v=3EN6mAFDqaI
 by Marijus Jacevičius
+
 
 Complete IOR List
 ** http://forums.cgsociety.org/archive/index.php?t-513458.html
