@@ -22,6 +22,8 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-16) Rerendered Alexandrite block&item; new textures for minerals: Alexandrite, Amethyst; collecting hd versions in etc/hd  
+* (2017-02-16) blend file: completely reworked gem shader (blend version 2)
 * (2017-02-15) blend file: connected ID Mask to Image output (in Compositor nodes) for alpha in rendered image
 * (2017-02-13) Finished working gem and block textures for Topaz, Alexandrite, Amethyst, made in Blender by expertmm
 * (2017-02-13) Made multi-sided Topaz Block (WIP) made in Blender
@@ -122,10 +124,11 @@ xcf file has colors used for manual tinting
 
 (If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis--see "Blender gem tutorial" link below for why)
 Do the following steps to re-render a block:
-* Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment):
-(you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
-Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsorptionSaturation
-Alexandrite,567274 to 63152c,1.75,	.5,		0,		0,		0,			1.0
+* Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment; ~ means wasn't plugged into any nodes):
+(v1L you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
+(v2 you can also tweak whether Tangent, which Light Path output [and whether passes through Reduction node], or nothing [0.00] is used for Glare Mix's Factor; warped block shards can be fitted together then scaled by 1.01 on the x&z [s, shift z, 1.01])
+Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix
+Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,		1,		1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00
 Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5
 Aquamarine,	8bdcdf,			,	,		,		,		,			
 Diamond,	ced7da,			,	,		,		,		,			
