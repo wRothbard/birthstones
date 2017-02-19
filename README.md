@@ -22,6 +22,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-02-19) new textures for aquamarine: mineral, block, item
 * (2017-02-16) Rerendered Alexandrite block&item; new textures for minerals: Alexandrite, Amethyst; collecting hd versions in etc/hd  
 * (2017-02-16) blend file: completely reworked gem shader (blend version 2)
 * (2017-02-15) blend file: connected ID Mask to Image output (in Compositor nodes) for alpha in rendered image
@@ -127,10 +128,10 @@ Do the following steps to re-render a block:
 * Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment; ~ means wasn't plugged into any nodes):
 (v1L you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
 (v2 you can also tweak whether Tangent, which Light Path output [and whether passes through Reduction node], or nothing [0.00] is used for Glare Mix's Factor; warped block shards can be fitted together then scaled by 1.01 on the x&z [s, shift z, 1.01])
-Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix
-Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,		1,		1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00
-Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5
-Aquamarine,	8bdcdf,			,	,		,		,		,			
+Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix, 						GlareSat (Glare Saturation)
+Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,		1,		1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
+Amethyst,	ad87a6,			1.55,	.5,		0,		0,			1,		.5,		~,								~
+Aquamarine,	8bdcdf,		1.564-1.596,	~,	~,		.95,		1,		0,		Gem:PatchyNoise;,				.5
 Diamond,	ced7da,			,	,		,		,		,			
 Emerald,	02552a,			,	,		,		,		,			
 Garnet,		78200c,			,	,		,		,		,			
@@ -140,6 +141,10 @@ Ruby,		832935,			,	,		,		,		,
 Sapphire,	163f7d,			,	,		,		,		,			
 Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
 Zircon,		255f75,			,	,		,		,		,			
+** Complete IOR Lists (values averaged or used from)
+  http://forums.cgsociety.org/archive/index.php?t-513458.html
+  http://www.gemselect.com/gem-info/refractive-index.php
+  (where '-' appears in grid, double refraction is used [different values in each IOR value input node])
 Take note that this list is in alphabetical order (like birthstones-mod git 2012) for convenience, not in actual birthstone month order.
 * Keep default resolution of 32x32 (must be full bleed then cropped to 16x16 manually to avoid edge issues with cycles)
 * Render the following cameras (or experiment): North, East, Top
@@ -149,17 +154,20 @@ Take note that this list is in alphabetical order (like birthstones-mod git 2012
 		* Copy the bottom row of pixels of top, then Paste onto top row of pixels of north
 		* Rotate top to the right temporarilty (don't save top after this)
 		* Copy the new bottom row of pixels of top, then Paste onto top row of pixels of east
-
+To make a Gem:
+* If you are making a new gem, I recommend making surface imperfect as follows (avoid Edge Split since it breaks edges into two lines, leading to problems with further modifiers and possibly with refraction or other light paths):
+	* Make a gem
+	* Tools, Smooth
+	* Add Modifier, Subdivision Surface, simple, View: 3 (that will be applied), Apply
+	* Go to edit mode, and select any edges that should be sharp, and click Mesh, Edges, Mark Sharp
+	* Object Data, check Autosmooth
+	* Change angle (can be all the way up, such as 90, if you did mark sharp on all edges above)
+	* Add Modifier, Displace, Add New, click "Show texture in texture tab" button to the right of it, change it from "Image or Movie" to Musgrave Multifractal, Intensity around .3, Size 2.0 or a little more than the size of the gem, then go back to Displace modifier and change Strength as needed (may have to be negative especially for some Musgrave patterns). 
 
 ### Special Thanks
 Blender gem tutorial
 https://www.youtube.com/watch?v=3EN6mAFDqaI
 by Marijus Jacevičius
-
-
-Complete IOR List
-** http://forums.cgsociety.org/archive/index.php?t-513458.html
-
 
 ## Minetest 2017 API notes
 (see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
