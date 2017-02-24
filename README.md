@@ -125,13 +125,16 @@ xcf file has colors used for manual tinting
 
 (If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis--see "Blender gem tutorial" link below for why)
 Do the following steps to re-render a block:
+* Install filmic blender (recommended: install Cycles Denoising build of Blender, and place filmic blender in there)
+* IF you make a new object that should be the gem, add the Gem3 material to your object (this is recommended for consistency--with previous versions, you must hide ground and show Ground sky reflection in order for top view to look shiny--this may be since both clamping settings were above 0).
 * Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment; ~ means wasn't plugged into any nodes):
 (v1L you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
 (v2 you can also tweak whether Tangent, which Light Path output [and whether passes through Reduction node], or nothing [0.00] is used for Glare Mix's Factor; warped block shards can be fitted together then scaled by 1.01 on the x&z [s, shift z, 1.01])
-Name,		GemColor,		IOR**,	Scatter,Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix, 						GlareSat (Glare Saturation)
-Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,		1,		1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
-Amethyst,	ad87a6,			1.55,	.5,		0,		0,			1,		.5,		~,								~
-Aquamarine,	8bdcdf,		1.564-1.596,	~,	~,		.95,		1,		0,		Gem:PatchyNoise;,				.5
+Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix, 						GlareSat (Glare Saturation)
+***Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,	1,			1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
+***Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5,		~,								~
+***Aquamarine,	8bdcdf,		1.564-1.596,~,		~,		.95,	1,			0,		Gem:PatchyNoise;,				.5
+Aquamarine,	8bdcdf,			1.564-1.596,.1,		0,		.5,		0,			0,		~,								~
 Diamond,	ced7da,			,	,		,		,		,			
 Emerald,	02552a,			,	,		,		,		,			
 Garnet,		78200c,			,	,		,		,		,			
@@ -139,12 +142,14 @@ Opal,		(texture),		,	,		,		,		,
 Peridot,	85b116,			,	,		,		,		,			
 Ruby,		832935,			,	,		,		,		,			
 Sapphire,	163f7d,			,	,		,		,		,			
-Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
+***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
 Zircon,		255f75,			,	,		,		,		,			
 ** Complete IOR Lists (values averaged or used from)
   http://forums.cgsociety.org/archive/index.php?t-513458.html
   http://www.gemselect.com/gem-info/refractive-index.php
-  (where '-' appears in grid, double refraction is used [different values in each IOR value input node])
+*** old shader (usually Gem2, or sometimes Gem) was used as opposed to Gem3 (Frost was called Scatter, but it wasn't actually volumetric scatter in Gem shaders 1-2)
+(where '-' appears in IOR column, double refraction is used [different values in each IOR value input node])
+  
 Take note that this list is in alphabetical order (like birthstones-mod git 2012) for convenience, not in actual birthstone month order.
 * Keep default resolution of 32x32 (must be full bleed then cropped to 16x16 manually to avoid edge issues with cycles)
 * Render the following cameras (or experiment): North, East, Top
@@ -165,9 +170,38 @@ To make a Gem:
 	* Add Modifier, Displace, Add New, click "Show texture in texture tab" button to the right of it, change it from "Image or Movie" to Musgrave Multifractal, Intensity around .3, Size 2.0 or a little more than the size of the gem, then go back to Displace modifier and change Strength as needed (may have to be negative especially for some Musgrave patterns). 
 
 ### Special Thanks
+
+How to Create a Rock in Blender Using Built-In Textures
+https://www.youtube.com/watch?v=5v8pzsYImc8
+by Blender Smoothie 
+
+Blender - shiny glass sculpture - Cycles render - Zeitfreund
+https://www.youtube.com/watch?v=jDHYQUj3N90
+by Zeitfreund
+
+Cycles' Volume Materials
+https://www.youtube.com/watch?v=CU_igW_1ZXs
+by EnigmaToots
+
+### Possibly helpful other tutorials
+(basis for Gem1 material)
 Blender gem tutorial
 https://www.youtube.com/watch?v=3EN6mAFDqaI
 by Marijus Jacevičius
+
+(additional influence on Gem2 material):
+Creating advanced shaders in Blender / cycles - Flat
+https://www.youtube.com/watch?v=nnpvFbvRSyM&t=1344s
+by Thornton Strolia
+
+(unused, but can be used for color diffraction)
+Blender Quick Tip #4 | Diamonds in Blender
+https://www.youtube.com/watch?v=4sk6RFcORd0
+The Digital M
+
+Gemstone (Tutorial)
+https://www.youtube.com/watch?v=I4PmptWMA08&t=8s
+by toki FX
 
 ## Minetest 2017 API notes
 (see http://wiki.minetest.net/Groups and https://github.com/minetest/minetest/blob/142e2d3b74ad886eed83b0fc9d6cfea100dae10a/doc/lua_api.txt#L736 )
