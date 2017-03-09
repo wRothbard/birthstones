@@ -22,6 +22,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-03-09) new textures for "white diamond": mineral, item; for topaz: mineral
 * (2017-02-19) new textures for aquamarine: mineral, block, item
 * (2017-02-16) Rerendered Alexandrite block&item; new textures for minerals: Alexandrite, Amethyst; collecting hd versions in etc/hd  
 * (2017-02-16) blend file: completely reworked gem shader (blend version 2)
@@ -135,7 +136,7 @@ Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix, 	
 ***Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5,		~,								~
 ***Aquamarine,	8bdcdf,		1.564-1.596,~,		~,		.95,	1,			0,		Gem:PatchyNoise;,				.5
 Aquamarine,	8bdcdf,			1.564-1.596,.1,		0,		.5,		0,			0,		~,								~
-Diamond,	ced7da,			,	,		,		,		,			
+Diamond,	ced7da,			2.418,		0[.1],		0,		1,		0,			,		,
 Emerald,	02552a,			,	,		,		,		,			
 Garnet,		78200c,			,	,		,		,		,			
 Opal,		(texture),		,	,		,		,		,			
@@ -144,6 +145,7 @@ Ruby,		832935,			,	,		,		,		,
 Sapphire,	163f7d,			,	,		,		,		,			
 ***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
 Zircon,		255f75,			,	,		,		,		,			
+[] if in brackets, value is for mineral (ore) version
 ** Complete IOR Lists (values averaged or used from)
   http://forums.cgsociety.org/archive/index.php?t-513458.html
   http://www.gemselect.com/gem-info/refractive-index.php

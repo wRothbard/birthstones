@@ -3,6 +3,7 @@ SET MT_PATH=C:\games\Minetest
 IF NOT EXIST "%MT_PATH%" GOTO ENDNOMINETEST
 SET MT_GAMES_PATH=%MT_PATH%\games
 SET MT_GAME_PATH=%MT_GAMES_PATH%\subgametest
+echo "subgametest is minetest_game, plus: birthstones, unified_inventory"
 IF NOT EXIST "%MT_GAME_PATH%" GOTO ENDNOGAME
 
 SET MODS_PATH=%MT_GAME_PATH%\mods
