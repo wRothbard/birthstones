@@ -125,7 +125,7 @@ minetest.register_node( "birthstones:aquamarineblock", {
 })
 minetest.register_node( "birthstones:diamondblock", {
 	description = "White Diamond Block",
-	tiles = { "birthstones_diamond_block.png" },
+	tiles = { "birthstones_diamond_block_top.png", "birthstones_diamond_block_top.png", "birthstones_diamond_block_east.png", "birthstones_diamond_block_east.png", "birthstones_diamond_block_north.png", "birthstones_diamond_block_north.png" },
 	is_ground_content = true,
 	groups = {cracky = 1, level = 3},
 	sounds = default.node_sound_stone_defaults(),
