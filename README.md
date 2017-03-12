@@ -22,8 +22,10 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
-* (2017-03-09) changed sun square emission from 10 to 10000
-* (2017-03-09) new textures for "white diamond": mineral, item [blend file: octagon beveled all but top and bottom by .12 offset]; for topaz: mineral
+* (2017-03-11) added better placeholder textures for gems where prerendered block is not finished yet
+* (2017-03-11) added new texture for emerald: mineral, item
+* (2017-03-10) changed sun square emission from 10 to 100
+* (2017-03-10) new textures for "white diamond": mineral, item [blend file: octagon beveled all but top and bottom by .12 offset]; for topaz: mineral
 * (2017-02-19) new textures for aquamarine: mineral, block, item
 * (2017-02-16) Rerendered Alexandrite block&item; new textures for minerals: Alexandrite, Amethyst; collecting hd versions in etc/hd  
 * (2017-02-16) blend file: completely reworked gem shader (blend version 2)
@@ -78,7 +80,8 @@ Some major changes were done to make the mod easier to maintain:
 * (2017-02-10) expertmm fork starting today
 
 ## Known Issues
-* Improve block textures
+* Improve remaining block textures
+* Make 8-bit style block textures (using default_diamond_block.png as luminance)
 * Make a trm for treasurer (separate mod)
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
   * #of uses, dig times, and fleshy damage group value now all based on real-life hardness values (see xlsx spreadsheet for details and sources and extrapolation formulas)
@@ -95,6 +98,7 @@ Some major changes were done to make the mod easier to maintain:
 * No arrows (planned as separate mod: birthstones_throwing)
 
 ### Future plans
+* Add option in server minetest.conf to use 8-bit style block textures (based on minetest default diamond block)
 * Look into changes in "birthstones fixed" at https://forum.minetest.net/viewtopic.php?f=9&t=11497&hilit=birthstones
 * Look into overlap in stone list found in Glooptest
 * Make compatible with glooptest
@@ -124,6 +128,7 @@ MORE but with hardness values available from 18carat.co.uk link above:
 
 ### Developer Notes
 xcf file has colors used for manual tinting
+Reference photos: Wikipedia entries for each Gem, and http://geologynerd.tumblr.com/
 
 (If you rotate the gems, rotation must be applied, since absorption is manually done along object z axis--see "Blender gem tutorial" link below for why)
 Do the following steps to re-render a block:
@@ -132,13 +137,13 @@ Do the following steps to re-render a block:
 * Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment; ~ means wasn't plugged into any nodes):
 (v1L you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
 (v2 you can also tweak whether Tangent, which Light Path output [and whether passes through Reduction node], or nothing [0.00] is used for Glare Mix's Factor; warped block shards can be fitted together then scaled by 1.01 on the x&z [s, shift z, 1.01])
-Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbsSat,	Glare Mix, 						GlareSat (Glare Saturation)
+Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbspSat,	Glare Mix, 						GlareSat (Glare Saturation)
 ***Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,	1,			1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
 ***Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5,		~,								~
 ***Aquamarine,	8bdcdf,		1.564-1.596,~,		~,		.95,	1,			0,		Gem:PatchyNoise;,				.5
-Aquamarine,	8bdcdf,			1.564-1.596,.1,		0,		.5,		0,			0,		~,								~
+Aquamarine,	(!8bdcdf)04A752,			1.564-1.596,.1,	0,		.5,		0,			0,		~,								~
 Diamond,	ced7da,			2.418,		0{.1}[.01],	0[.1],		1,		0,			,		,
-Emerald,	02552a,			,	,		,		,		,			
+Emerald,	02552a,			1.5775-1.5835,0,	.1,		.99,	.5,		0,,,
 Garnet,		78200c,			,	,		,		,		,			
 Opal,		(texture),		,	,		,		,		,			
 Peridot,	85b116,			,	,		,		,		,			
@@ -147,13 +152,15 @@ Sapphire,	163f7d,			,	,		,		,		,
 ***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
 Zircon,		255f75,			,	,		,		,		,			
 [] if in brackets, value is for block version
+! means not that value: though that value is apparent from a reference photo, it is apparently not the true albedo
 {} if in bracurly braces, value is for mineral (ore) version
 ** Complete IOR Lists (values averaged or used from)
   http://forums.cgsociety.org/archive/index.php?t-513458.html
   http://www.gemselect.com/gem-info/refractive-index.php
 *** old shader (usually Gem2, or sometimes Gem) was used as opposed to Gem3 (Frost was called Scatter, but it wasn't actually volumetric scatter in Gem shaders 1-2)
-(where '-' appears in IOR column, double refraction is used [different values in each IOR value input node])
-  
+- where '-' appears in IOR column, double refraction is used [different values in each IOR value input node])
+Starting with emerald, block is rotated by 90 on z
+
 Take note that this list is in alphabetical order (like birthstones-mod git 2012) for convenience, not in actual birthstone month order.
 * Keep default resolution of 32x32 (must be full bleed then cropped to 16x16 manually to avoid edge issues with cycles)
 * Render the following cameras (or experiment): North, East, Top

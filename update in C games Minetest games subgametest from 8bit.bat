@@ -1,4 +1,7 @@
-IF NOT EXIST ".\textures" GOTO ENDNOSOURCE
+SET SOURCE_PATH=.\textures
+IF NOT EXIST "%SOURCE_PATH%" GOTO ENDNOSOURCE
+SET SOURCE_PATH=.\etc\8bit
+IF NOT EXIST "%SOURCE_PATH%" GOTO ENDNOSOURCE
 SET MT_PATH=C:\games\Minetest
 IF NOT EXIST "%MT_PATH%" GOTO ENDNOMINETEST
 SET MT_GAMES_PATH=%MT_PATH%\games
@@ -12,6 +15,7 @@ IF NOT EXIST "%MOD_DEST_PATH%" md "%MOD_DEST_PATH%"
 copy *.* "%MOD_DEST_PATH%\"
 IF NOT EXIST "%MOD_DEST_PATH%\textures" md "%MOD_DEST_PATH%\textures"
 copy /y .\textures\*.* "%MOD_DEST_PATH%\textures"
+copy /y .\etc\8bit\*.* "%MOD_DEST_PATH%\textures"
 
 GOTO ENDSILENTLY
 :ENDNOMINETEST:
@@ -23,6 +27,6 @@ echo "Subgame %MT_ENLIVEN_PATH% is not installed -- extract that subgame there f
 pause
 GOTO ENDSILENTLY
 :ENDNOSOURCE
-echo "Missing source folder. You must extract all files and run from a drive letter, so that textures folder is in current working directory"
+echo "Missing source folder '%SOURCE_PATH%'. You must extract all files and run from a drive letter, so that textures folder is in current working directory"
 pause
 :ENDSILENTLY
