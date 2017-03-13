@@ -22,7 +22,10 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
-* (2017-03-11) added better placeholder textures for gems where prerendered block is not finished yet
+* (2017-03-13) textures improved: opal mineral overlay, alexandrite classic block
+* (2017-03-13) default block style changed to classic
+* (2017-03-13) now uses settings from server's minetest.conf: birthstones_texture_style (can be realistic or classic)
+* (2017-03-11) added better classic textures for gems where realistic block is not finished yet
 * (2017-03-11) added new texture for emerald: mineral, item
 * (2017-03-10) changed sun square emission from 10 to 100
 * (2017-03-10) new textures for "white diamond": mineral, item [blend file: octagon beveled all but top and bottom by .12 offset]; for topaz: mineral
