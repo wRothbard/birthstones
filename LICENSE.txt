@@ -19,7 +19,7 @@ Licenses of media (textures) unless otherwise specified (see README file):
 Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 Copyright (C) 2015-2016 expertmm (github.com/expertmm):
 * based on textures from minetest_game at https://github.com/minetest/minetest_game/tree/master/mods/default: source work is included on layers in Gimp XCF project files in etc folder:
-   * Opal texture CC BY-SA 3.0 by expertmm: based on CC BY-SA 3.0 photo by Dpulitzer "Multicolor rough crystal opal from Coober Pedy, South Australia" https://en.wikipedia.org/wiki/Opal#/media/File:Coober_Pedy_Opal_2.jpg 
+   * Opal textures CC BY-SA 3.0 by expertmm: based on CC BY-SA 3.0 photo by Dpulitzer "Multicolor rough crystal opal from Coober Pedy, South Australia" https://en.wikipedia.org/wiki/Opal#/media/File:Coober_Pedy_Opal_2.jpg 
    * Swords CC BY-SA 3.0 by expertmm: based on default_tool_steelsword.png by BlockMen (CC BY-SA 3.0 Unported)
    * Shovels CC BY-SA 3.0 by expertmm: based on default_tool_steelshovel.png by celeron55, Perttu Ahola <celeron55@gmail.com> (CC BY-SA 3.0 )
    * Hoes CC BY-SA 3.0 by expertmm: based on farming_tool_hoe.png bu various: Copyright (C) 2012-2016 PilzAdam, Copyright (C) 2014-2016 BlockMen, Copyright (C) 2015-2016 MasterGollum, Copyright (C) 2015-2016 Gambit
