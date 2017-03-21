@@ -6,6 +6,7 @@ see LICENSE for full credits)
 ### Main reasons for fork:
 * add more tools
 * make changes to code to make use of modern Minetest (such as ore drop string)
+* make 3D prerendered textures of gem (item) and mineral (and optional block textures)
 
 ### Notable issues found in original (see items marked with '!' in "Changes" section for others):
 (hopefully these changes get corrected there)
@@ -22,6 +23,9 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-03-20) Change garnet from Spessartine to pomegranate seed colored Rhodolite to reflect the original meaning of the word garnet (comes from the word pomegranate) -- see  and  https://www.americangemsociety.org/en/garnet-history
+* (2017-03-18) new textures for garnet: gem (item), mineral, block (realistic style)
+* (2017-03-18) tint of garnet block (classic style) changed to be that of Spessartine garnet
 * (2017-03-13) textures improved: opal mineral overlay, alexandrite classic block
 * (2017-03-13) default block style changed to classic
 * (2017-03-13) now uses settings from server's minetest.conf: birthstones_texture_style (can be realistic or classic)
@@ -84,7 +88,6 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Known Issues
 * Improve remaining block textures
-* Make 8-bit style block textures (using default_diamond_block.png as luminance)
 * Make a trm for treasurer (separate mod)
 * Make variables based on real hardness values (but allow all birthstones to break the same types of blocks, for playability):
   * #of uses, dig times, and fleshy damage group value now all based on real-life hardness values (see xlsx spreadsheet for details and sources and extrapolation formulas)
@@ -146,14 +149,16 @@ Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbspSat,	Glare Mix, 
 ***Aquamarine,	8bdcdf,		1.564-1.596,~,		~,		.95,	1,			0,		Gem:PatchyNoise;,				.5
 Aquamarine,	(!8bdcdf)04A752,			1.564-1.596,.1,	0,		.5,		0,			0,		~,								~
 Diamond,	ced7da,			2.418,		0{.1}[.01],	0[.1],		1,		0,			,		,
-Emerald,	02552a,			1.5775-1.5835,0,	.1,		.99,	.5,		0,,,
-Garnet,		78200c,			,	,		,		,		,			
+Emerald,	(!02552a)04A752,			1.5775-1.5835,0,.1,		.99,	.5,		0,,,
+[Spessartine]Garnet,b5622c,1.73-1.75,	0,		0,		.9,		0,		,		,,,
+[pom-colored]Garnet,910516,1.73-1.75,	0,		0.05,	1.0,	0,		,		,,,
 Opal,		(texture),		,	,		,		,		,			
 Peridot,	85b116,			,	,		,		,		,			
 Ruby,		832935,			,	,		,		,		,			
 Sapphire,	163f7d,			,	,		,		,		,			
 ***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
 Zircon,		255f75,			,	,		,		,		,			
+****LampSky changed from ~1 to 3, LampSunSquareYellow changed from .3 to 30, clouds from 1 to 4, starting from only item version of this to all future renders
 [] if in brackets, value is for block version
 ! means not that value: though that value is apparent from a reference photo, it is apparently not the true albedo
 {} if in bracurly braces, value is for mineral (ore) version
@@ -163,6 +168,7 @@ Zircon,		255f75,			,	,		,		,		,
 *** old shader (usually Gem2, or sometimes Gem) was used as opposed to Gem3 (Frost was called Scatter, but it wasn't actually volumetric scatter in Gem shaders 1-2)
 - where '-' appears in IOR column, double refraction is used [different values in each IOR value input node])
 Starting with emerald, block is rotated by 90 on z
+pom-colored means pomegranate-seed-colored
 
 Take note that this list is in alphabetical order (like birthstones-mod git 2012) for convenience, not in actual birthstone month order.
 * Keep default resolution of 32x32 (must be full bleed then cropped to 16x16 manually to avoid edge issues with cycles)
