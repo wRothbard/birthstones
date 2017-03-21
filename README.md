@@ -23,6 +23,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-03-20) Added improved opal item texture (finished all except optional realistic mode opal block)
 * (2017-03-20) Change garnet from Spessartine to pomegranate seed colored Rhodolite to reflect the original meaning of the word garnet (comes from the word pomegranate) -- see  and  https://www.americangemsociety.org/en/garnet-history
 * (2017-03-18) new textures for garnet: gem (item), mineral, block (realistic style)
 * (2017-03-18) tint of garnet block (classic style) changed to be that of Spessartine garnet
