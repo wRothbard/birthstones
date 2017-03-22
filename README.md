@@ -23,6 +23,7 @@ Some major changes were done to make the mod easier to maintain:
 
 ## Changes:
 '!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-03-21) Added improved peridot item&mineral textures
 * (2017-03-20) Added improved opal item texture (finished all except optional realistic mode opal block)
 * (2017-03-20) Change garnet from Spessartine to pomegranate seed colored Rhodolite to reflect the original meaning of the word garnet (comes from the word pomegranate) -- see  and  https://www.americangemsociety.org/en/garnet-history
 * (2017-03-18) new textures for garnet: gem (item), mineral, block (realistic style)
@@ -153,8 +154,8 @@ Diamond,	ced7da,			2.418,		0{.1}[.01],	0[.1],		1,		0,			,		,
 Emerald,	(!02552a)04A752,			1.5775-1.5835,0,.1,		.99,	.5,		0,,,
 [Spessartine]Garnet,b5622c,1.73-1.75,	0,		0,		.9,		0,		,		,,,
 [pom-colored]Garnet,910516,1.73-1.75,	0,		0.05,	1.0,	0,		,		,,,
-Opal,		(texture),		,	,		,		,		,			
-Peridot,	85b116,			,	,		,		,		,			
+Opal,		(texture),		1.52,	,		,		,		,(see blend file version 2's "Stone" material)
+Peridot,	85b116,	1.658-1.695,	,		,		,		,			
 Ruby,		832935,			,	,		,		,		,			
 Sapphire,	163f7d,			,	,		,		,		,			
 ***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0

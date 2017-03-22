@@ -25,7 +25,7 @@ Copyright (C) 2015-2016 expertmm (github.com/expertmm):
    * Hoes CC BY-SA 3.0 by expertmm: based on farming_tool_hoe.png bu various: Copyright (C) 2012-2016 PilzAdam, Copyright (C) 2014-2016 BlockMen, Copyright (C) 2015-2016 MasterGollum, Copyright (C) 2015-2016 Gambit
 
 Everything else (2012) by Doc22:
-* Textures for axes, picks, mineral overlays, items (x.png where x is name), and blocks (originally WTFPL as specified at https://forum.minetest.net/viewtopic.php?id=3663 , rereleased as CC BY-SA 3.0)
+* Textures for axes, picks, and if not modified after 2012: items (x.png where x is mineral name), mineral overlays, and blocks (originally WTFPL as specified at https://forum.minetest.net/viewtopic.php?id=3663 , rereleased as CC BY-SA 3.0)
 
 You are free to:
 Share — copy and redistribute the material in any medium or format.
