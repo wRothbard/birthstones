@@ -22,7 +22,9 @@ Some major changes were done to make the mod easier to maintain:
 
 
 ## Changes:
-'!' is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+'!' (near bottom) is for bugs in 2012 version that are fixed (as opposed to features that were changed/added) in this fork
+* (2017-05-14) Added improved ruby item, mineral, & (realistic mode) block textures
+* (2017-03-23) Added improved peridot (realistic mode) block texture
 * (2017-03-21) Added improved peridot item&mineral textures
 * (2017-03-20) Added improved opal item texture (finished all except optional realistic mode opal block)
 * (2017-03-20) Change garnet from Spessartine to pomegranate seed colored Rhodolite to reflect the original meaning of the word garnet (comes from the word pomegranate) -- see  and  https://www.americangemsociety.org/en/garnet-history
@@ -129,7 +131,7 @@ Some major changes were done to make the mod easier to maintain:
 
 
 ## Minerals of note not in birthstones (for reference only) with density values from website above:
-MORE but with hardness values available from 18carat.co.uk link above:
+(NOTE: More, but with only Mohs hardness values, available from 18carat.co.uk link in spreadsheet)
 * Name,Density,Moh,Brinell
 * Apatite,3.16-3.23,5,137
 * Calcite,2.69-2.71,3,53
@@ -145,28 +147,28 @@ Do the following steps to re-render a block:
 * Open the included Blend file in Blender and set the input nodes as follows (if there are two, set one as the input for absorption and turn that up--or experiment; ~ means wasn't plugged into any nodes):
 (v1L you can also tweak whether fresnel, facing, or IsTransmissionRay is Factor for "Glow Mix" node (you can also flip the inputs)
 (v2 you can also tweak whether Tangent, which Light Path output [and whether passes through Reduction node], or nothing [0.00] is used for Glare Mix's Factor; warped block shards can be fitted together then scaled by 1.01 on the x&z [s, shift z, 1.01])
-Name,		GemColor,		IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbspSat,	Glare Mix, 						GlareSat (Glare Saturation)
-***Alexandrite,567274 to 63152c,1.75,	~,		~,		.95,	1,			1.0,	Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
-***Amethyst,	ad87a6,			1.55,	.5,		0,		0,		1,			.5,		~,								~
-***Aquamarine,	8bdcdf,		1.564-1.596,~,		~,		.95,	1,			0,		Gem:PatchyNoise;,				.5
-Aquamarine,	(!8bdcdf)04A752,			1.564-1.596,.1,	0,		.5,		0,			0,		~,								~
-Diamond,	ced7da,			2.418,		0{.1}[.01],	0[.1],		1,		0,			,		,
-Emerald,	(!02552a)04A752,			1.5775-1.5835,0,.1,		.99,	.5,		0,,,
-[Spessartine]Garnet,b5622c,1.73-1.75,	0,		0,		.9,		0,		,		,,,
-[pom-colored]Garnet,910516,1.73-1.75,	0,		0.05,	1.0,	0,		,		,,,
-Opal,		(texture),		1.52,	,		,		,		,(see blend file version 2's "Stone" material)
-Peridot,	85b116,	1.658-1.695,	,		,		,		,			
-Ruby,		832935,			,	,		,		,		,			
-Sapphire,	163f7d,			,	,		,		,		,			
-***Topaz, 		E5A55F,			1.62,	.5,		.5,		1.0, 	0.0,		0.0
-Zircon,		255f75,			,	,		,		,		,			
+Name,		GemColor,			IOR**,		Frost,	Gloss,	Clarity,Absorption,	AbspSat,	Glare Mix, 						GlareSat (Glare Saturation)
+***Alexandrite,567274 to 63152c,1.75,		~,		~,		.95,	1,			1.0,		Gem:Tangent ; Block: Tangent*Reduction; Block east: 0.00, ~
+***Amethyst,	ad87a6,			1.55,		.5,		0,		0,		1,			.5,			~,								~
+***Aquamarine,	8bdcdf,		1.564-1.596,	~,		~,		.95,	1,			0,			Gem:PatchyNoise;,				.5
+Aquamarine,	(!8bdcdf)04A752,1.564-1.596,	.1,		0,		.5,		0,			0,			~,								~
+Diamond,	ced7da,				2.418,		0{.1}[.01],		0[.1],	1,			0,			,		
+Emerald,	(!02552a)04A752,1.5775-1.5835,	0,		.1,		.99,	.5,			0,			,
+[Spessartine]Garnet,b5622c,1.73-1.75,		0,		0,		.9,		0,			,			,
+[pom-colored]Garnet,910516,1.73-1.75,		0,		0.05,	1.0,	0,			,			,
+Opal,		(texture),			1.52,		,		,		,		,(see blend file version 2's 'Stone' material),
+Peridot,	85b116,			1.658-1.695,	0.001,	0.05,	0.99,	0,			0,			,
+Ruby,		832935,			1.766-1.774,	,		,		,		,			,			,
+Sapphire,	163f7d,				,		,		,		,		,			,			,
+***Topaz, 	E5A55F,				1.62,		.5,		.5,		1.0, 	0.0,		0.0,		,
+Zircon,		255f75,				,	,	,		,		,			
 ****LampSky changed from ~1 to 3, LampSunSquareYellow changed from .3 to 30, clouds from 1 to 4, starting from only item version of this to all future renders
 [] if in brackets, value is for block version
 ! means not that value: though that value is apparent from a reference photo, it is apparently not the true albedo
 {} if in bracurly braces, value is for mineral (ore) version
 ** Complete IOR Lists (values averaged or used from)
   http://forums.cgsociety.org/archive/index.php?t-513458.html
-  http://www.gemselect.com/gem-info/refractive-index.php
+  http://www.gemselect.com/gem-info/refractive-index.php (use this one--has double refraction info)
 *** old shader (usually Gem2, or sometimes Gem) was used as opposed to Gem3 (Frost was called Scatter, but it wasn't actually volumetric scatter in Gem shaders 1-2)
 - where '-' appears in IOR column, double refraction is used [different values in each IOR value input node])
 Starting with emerald, block is rotated by 90 on z
@@ -190,6 +192,8 @@ To make a Gem:
 	* Object Data, check Autosmooth
 	* Change angle (can be all the way up, such as 90, if you did mark sharp on all edges above)
 	* Add Modifier, Displace, Add New, click "Show texture in texture tab" button to the right of it, change it from "Image or Movie" to Musgrave Multifractal, Intensity around .3, Size 2.0 or a little more than the size of the gem, then go back to Displace modifier and change Strength as needed (may have to be negative especially for some Musgrave patterns). 
+* To make 8-bit version, convert to 8-bit before scaling down from 128x128 to 16x16.
+* To use existing Block Shards, keep in mind that for Block Shard Hex Pointed, Object data, mesh name can be changed between "BlockShardHexFlatSide" and "BlockShardHexPointed"
 
 ### Special Thanks
 

@@ -1,4 +1,7 @@
+expertmm authored the following textures and resources:
 (see README for sources)
+
+/textures
 birthstones_tool_alexandriteshovel.png
 birthstones_tool_alexandritesword.png
 birthstones_tool_amethystshovel.png
@@ -23,3 +26,10 @@ birthstones_tool_topazshovel.png
 birthstones_tool_topazsword.png
 birthstones_tool_zirconshovel.png
 birthstones_tool_zirconsword.png
+*_block_north.png
+*_block_east.png
+*_block_top.png
+*_block.png
+
+/etc
+(entire folder and all subfolders)
