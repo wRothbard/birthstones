@@ -1,6 +1,9 @@
-# Minetest Game mod: birthstones
-(Based on birthstones Minetest mod by Doc22; textures based on CC-BY-SA work by various authors--
-see LICENSE for full credits)
+# birthstones
+(minetest mod)
+
+* Code is based on birthstones Minetest mod by Doc22.
+* Default (pixel art) textures are based on CC-BY-SA work by various
+  authors (see LICENSE for full credits).
 
 ## Primary differences from original
 (see also CHANGELOG.md)
@@ -10,7 +13,7 @@ see LICENSE for full credits)
 * Make changes to code to make use of modern Minetest (such as ore drop
   string).
 * Make 3D prerendered textures of gem (item) and mineral (and optional
-  block textures)
+  block textures); improve other textures.
 
 ### Notable Issues Found in Original
 (see also exclamation points in **CHANGELOG.md**)
@@ -26,6 +29,7 @@ I made some major changes to make the mod easier to maintain:
 * I changed to minetest_game's naming scheme for filenames and node/tool
   names (adding aliases for backward compatibility).
 * Componentize into separate Lua files by operation.
+
 
 ## Known Issues
 * Improve remaining block textures
@@ -166,6 +170,7 @@ To make a Gem:
 - [Gemstone
   (Tutorial)](https://www.youtube.com/watch?v=I4PmptWMA08&t=8s)
   by toki FX
+
 
 ## Minetest 2017 API notes
 (see <http://wiki.minetest.net/Groups> and
