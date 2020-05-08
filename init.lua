@@ -106,7 +106,7 @@ minetest.register_node( "birthstones:zirconore", {
 
 
 minetest.register_craftitem( "birthstones:alexandrite", {
-	description = "Alexandrite (January)",
+	description = "Alexandrite (June)",
 	inventory_image = "Alexandrite.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
@@ -131,12 +131,12 @@ minetest.register_craftitem( "birthstones:emerald", {
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 minetest.register_craftitem( "birthstones:garnet", {
-	description = "Garnet (June)",
+	description = "Garnet (January)",
 	inventory_image = "Garnet.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 minetest.register_craftitem( "birthstones:opal", {
-	description = "Opal (July)",
+	description = "Opal (October)",
 	inventory_image = "Opal.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
@@ -146,12 +146,12 @@ minetest.register_craftitem( "birthstones:peridot", {
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 minetest.register_craftitem( "birthstones:ruby", {
-	description = "Ruby (September)",
+	description = "Ruby (July)",
 	inventory_image = "Ruby.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 minetest.register_craftitem( "birthstones:sapphire", {
-	description = "Sapphire (October)",
+	description = "Sapphire (September)",
 	inventory_image = "Sapphire.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
