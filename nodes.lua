@@ -31,7 +31,7 @@ end
 
 minetest.register_node( "birthstones:stone_with_alexandrite", {
 	description = "Stone with Alexandrite",
-	tiles = { "default_stone.png^birthstones_mineral_alexandrite.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_alexandrite.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -39,7 +39,7 @@ minetest.register_node( "birthstones:stone_with_alexandrite", {
 })
 minetest.register_node( "birthstones:stone_with_amethyst", {
 	description = "Stone with Amethyst",
-	tiles = { "default_stone.png^birthstones_mineral_amethyst.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_amethyst.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -47,7 +47,7 @@ minetest.register_node( "birthstones:stone_with_amethyst", {
 })
 minetest.register_node( "birthstones:stone_with_aquamarine", {
 	description = "Stone with Aquamarine",
-	tiles = { "default_stone.png^birthstones_mineral_aquamarine.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_aquamarine.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -55,7 +55,7 @@ minetest.register_node( "birthstones:stone_with_aquamarine", {
 })
 minetest.register_node( "birthstones:stone_with_diamond", {
 	description = "Stone with White Diamond",
-	tiles = { "default_stone.png^birthstones_mineral_diamond.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_diamond.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -63,7 +63,7 @@ minetest.register_node( "birthstones:stone_with_diamond", {
 })
 minetest.register_node( "birthstones:stone_with_emerald", {
 	description = "Stone with Emerald",
-	tiles = { "default_stone.png^birthstones_mineral_emerald.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_emerald.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -71,7 +71,7 @@ minetest.register_node( "birthstones:stone_with_emerald", {
 })
 minetest.register_node( "birthstones:stone_with_garnet", {
 	description = "Stone with Garnet",
-	tiles = { "default_stone.png^birthstones_mineral_garnet.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_garnet.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -79,7 +79,7 @@ minetest.register_node( "birthstones:stone_with_garnet", {
 })
 minetest.register_node( "birthstones:stone_with_opal", {
 	description = "Stone with Opal",
-	tiles = { "default_stone.png^birthstones_mineral_opal.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_opal.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -87,7 +87,7 @@ minetest.register_node( "birthstones:stone_with_opal", {
 })
 minetest.register_node( "birthstones:stone_with_peridot", {
 	description = "Stone with Peridot",
-	tiles = { "default_stone.png^birthstones_mineral_peridot.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_peridot.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -95,7 +95,7 @@ minetest.register_node( "birthstones:stone_with_peridot", {
 })
 minetest.register_node( "birthstones:stone_with_ruby", {
 	description = "Stone with Ruby",
-	tiles = { "default_stone.png^birthstones_mineral_ruby.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_ruby.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -103,7 +103,7 @@ minetest.register_node( "birthstones:stone_with_ruby", {
 })
 minetest.register_node( "birthstones:stone_with_sapphire", {
 	description = "Stone with Sapphire",
-	tiles = { "default_stone.png^birthstones_mineral_sapphire.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_sapphire.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -111,7 +111,7 @@ minetest.register_node( "birthstones:stone_with_sapphire", {
 })
 minetest.register_node( "birthstones:stone_with_topaz", {
 	description = "Stone with Topaz",
-	tiles = { "default_stone.png^birthstones_mineral_topaz.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_topaz.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),
@@ -119,7 +119,7 @@ minetest.register_node( "birthstones:stone_with_topaz", {
 })
 minetest.register_node( "birthstones:stone_with_zircon", {
 	description = "Stone with Zircon",
-	tiles = { "default_stone.png^birthstones_mineral_zircon.png" },
+	tiles = { "stone_stone.png^birthstones_mineral_zircon.png" },
 	is_ground_content = true,
 	groups = {cracky=1},
 	sounds = default.node_sound_stone_defaults(),

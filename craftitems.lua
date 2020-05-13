@@ -19,7 +19,7 @@ minetest.register_craftitem( "birthstones:diamond", {
 	on_place_on_ground = minetest.craftitem_place_item,
 })
 minetest.register_craftitem( "birthstones:emerald", {
-	description = "Emerald",
+	description = "Dark Emerald",
 	inventory_image = "birthstones_emerald.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
@@ -58,4 +58,16 @@ minetest.register_craftitem( "birthstones:zircon", {
 	inventory_image = "birthstones_zircon.png",
 	on_place_on_ground = minetest.craftitem_place_item,
 })
+
+minetest.register_alias("birthstones:ruby", "ruby:ruby")
+minetest.register_craftitem("birthstones:ruby_fragment", {
+        description = "Ruby Fragment",
+        inventory_image = "ruby_fragment.png",
+})
+minetest.register_alias("birthstones:ruby_fragment", "ruby:fragment")
+minetest.register_craftitem("birthstones:ruby_coin", {
+        description = "Ruby Coin",
+        inventory_image = "ruby_coin.png",
+})
+minetest.register_alias("birthstones:ruby_coin", "ruby:coin")
 
