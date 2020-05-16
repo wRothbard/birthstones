@@ -68,6 +68,7 @@ minetest.register_alias("birthstones:ruby_fragment", "ruby:fragment")
 minetest.register_craftitem("birthstones:ruby_coin", {
         description = "Ruby Coin",
         inventory_image = "ruby_coin.png",
+	stack_max = 10000,
 })
 minetest.register_alias("birthstones:ruby_coin", "ruby:coin")
 
